@@ -1,0 +1,90 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2' // Untuk laporan Allure (Opsional)
+}
+
+group = 'com.automation'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // JUnit 5 dan JUnit Platform Suite
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.junit.platform:junit-platform-suite:1.10.0'
+    testImplementation 'org.junit.platform:junit-platform-suite-engine:1.10.0'
+
+    // Cucumber
+    testImplementation 'io.cucumber:cucumber-java:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.14.0'
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine:7.14.0'
+
+    // Selenium untuk Web UI Testing
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.11.0'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.6.3'
+
+    // RestAssured untuk API Testing
+    testImplementation 'io.rest-assured:rest-assured:5.3.0'
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-simple:2.0.7'
+
+    // Cucumber Report
+    testImplementation 'net.masterthought:cucumber-reporting:5.7.7'
+
+    // JSON Processing
+    testImplementation 'org.json:json:20210307'
+    testImplementation 'com.google.code.gson:gson:2.10.1'
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.8.0'
+}
+
+test {
+    useJUnit()
+//    testLogging {
+//        events "passed", "skipped", "failed"
+//    }
+
+    // Mengambil argumen dari properti sistem dan menambahkannya ke dalam properti sistem untuk Selenium
+//    def chromeArgs = project.hasProperty('chromeoptions.args') ? project.chromeoptions.args : ''
+//    systemProperty 'chromeoptions.args', chromeArgs
+}
+tasks.register('apiTest', Test) {
+    useJUnitPlatform()
+}
+
+tasks.register('webTest', Test) {
+    useJUnit()
+}
+
+// ✅ Hanya gunakan satu task untuk API Test (Tag: @api)
+//tasks.register('apiTest', Test) {
+//    useJUnitPlatform()
+//    systemProperty 'cucumber.filter.tags', '@api'
+//    systemProperty 'cucumber.plugin', "json:target/cucumber-reports/cucumber-api.json, html:target/cucumber-reports/cucumber-api.html"
+//    testClassesDirs = sourceSets.test.output.classesDirs
+//    classpath = sourceSets.test.runtimeClasspath
+//}
+
+// Hanya gunakan satu task untuk Web UI Test (Tag: @web)
+// Menjalankan hanya test Web UI (Tag: @web)
+//tasks.register('webTest', Test) {
+//    useJUnitPlatform()
+//    systemProperty 'cucumber.filter.tags', '@web'
+//    systemProperty 'cucumber.plugin', "json:target/cucumber-reports/cucumber-web.json, html:target/cucumber-reports/cucumber-web.html"
+//    testClassesDirs = sourceSets.test.output.classesDirs
+//    classpath = sourceSets.test.runtimeClasspath
+//}
+
+
+//test {
+//    useJUnitPlatform()
+//
+//    def chromeArgs = project.findProperty("chromeoptions.args")
+//    if (chromeArgs != null) {
+//        systemProperty "chromeoptions.args", chromeArgs
+//    }
+//}
+
