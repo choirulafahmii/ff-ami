@@ -16,7 +16,7 @@ public class RegisterPage {
     private By signUpMenu = By.id("signin2");
     private By usernameField = By.id("sign-username");
     private By passwordField = By.id("sign-password");
-    private By signUpButton = By.xpath("//*[@id=\"signin2\"]");
+    private By signUpButton = By.xpath("//*[@id=\"signInModal\"]/div/div/div[3]/button[2]");
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;

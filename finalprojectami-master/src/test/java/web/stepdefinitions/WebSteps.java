@@ -1,5 +1,7 @@
 package web.stepdefinitions;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import org.openqa.selenium.WebDriver;
 
@@ -7,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 public class WebSteps {
     protected WebDriver driver;
 
-    // @before
     public WebSteps(){
         driver = Hooks.getDriver();
     }
@@ -17,7 +18,7 @@ public class WebSteps {
         driver.get("https://demoblaze.com/");
     }
 
-    // @after
+    @After
     public void tearDown(){
         if (driver != null) {
             driver.quit();
