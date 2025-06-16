@@ -10,6 +10,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run: 
+        working-directory: finalprojectami-master
 
     steps:
     # download repo
@@ -25,7 +28,7 @@ jobs:
     # install browser
     - name: Setup Chrome
       uses: browser-actions/setup-chrome@v1.7.3
-
+    
     # set up gradlew
     - name:  Setup gradlew
       run: chmod +x gradlew
