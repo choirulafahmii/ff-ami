@@ -117,8 +117,7 @@ public class CheckoutSteps {
         }
     }
 
-    @After
-    public void tearDown() {
+        public void tearDown() {
         if (driver != null) driver.quit();
         CheckoutData.clear();
     }

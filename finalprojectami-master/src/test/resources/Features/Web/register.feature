@@ -1,6 +1,6 @@
 Feature: Register Account in Demoblaze
   As new user
-  I want register accoung in Demoblaze
+  I want register account in Demoblaze
   So I can login and shopping in this site
 
   Scenario Outline: Register account on Demoblaze
@@ -13,5 +13,5 @@ Feature: Register Account in Demoblaze
 
     Examples:
       | username | password    | expectedMessage              |
-      | ggmu     | ggmu1       | Sign up successful.          |
+      | ggmu3    | ggmu1       | Sign up successful.          |
       | user123  | password123 | This user already exist.     |

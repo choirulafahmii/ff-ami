@@ -54,7 +54,7 @@ public class RegisterSteps {
     public void systemShowMessage(String expectedMessage) {
         String actualMessage = RegisterPage.getAlertMessage();
         if (!actualMessage.equals(expectedMessage)){
-            throw new AssertionError("Pesan yang diharapkan" + expectedMessage + "tetapi yang muncul" + actualMessage);
+            throw new AssertionError("Pesan yang diharapkan " + expectedMessage + " tetapi yang muncul " + actualMessage);
         }
     }
 }

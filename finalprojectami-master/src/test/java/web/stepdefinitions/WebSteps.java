@@ -18,7 +18,6 @@ public class WebSteps {
         driver.get("https://demoblaze.com/");
     }
 
-    @After
     public void tearDown(){
         if (driver != null) {
             driver.quit();
