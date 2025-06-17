@@ -109,7 +109,7 @@ public class APISteps {
 
     @Then("the response status should be {int}")
     public void theResponseStatusShouldBe(int statusCode) {
-        response.then().statusCode(anyOf(equalTo(200), equalTo(201)));
+        response.then().statusCode(statusCode);
     }
 
     @Then("the response should contain the user ID")

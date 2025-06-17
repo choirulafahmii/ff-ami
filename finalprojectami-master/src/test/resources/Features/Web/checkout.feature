@@ -24,7 +24,7 @@ Feature: Checkout in Demoblaze
   @positive
   Scenario Outline: User successfully checkout with valid data
     Given user open Demoblaze page
-    When user add "<produk>" to cart
+    When user add "<product>" to cart
     And user go to cart page
     And user open checkout form
     And user fill checkout form with following data:

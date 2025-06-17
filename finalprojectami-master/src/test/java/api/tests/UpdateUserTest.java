@@ -20,8 +20,8 @@ public class UpdateUserTest extends BaseTest {
 
         //Membuat JSON Payload untuk update user
         JSONObject updateData = new JSONObject();
-        updateData.put("first name", "sasha");
-        updateData.put("last name", "looking");
+        updateData.put("firstName", "sasha");
+        updateData.put("lastName", "looking");
 
         //kirim request PUT untuk memperbarui user
         Response response = (Response) given()
@@ -32,8 +32,9 @@ public class UpdateUserTest extends BaseTest {
                 .put("/user/" + userId)
                 .then()
                 .statusCode(200)
-                .body("first name", equalTo("sasha"))
-                .body("last name", equalTo("looking"))
+                .body("firstName", equalTo("sasha"))
+                .body("lastName", equalTo("looking"))
+
                 .extract().response();
 
         System.out.println("user updated Response: " + response.prettyPrint());

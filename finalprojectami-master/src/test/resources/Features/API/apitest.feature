@@ -2,7 +2,7 @@
 
   @api
   Scenario: Create a new user
-    Given I have user details with first name "fahmi", last name "ami", and a unique email
+    Given I have user details with first name "fahmiii", last name "amiii", and a unique email
     When I send a request to create the user
     Then the user should be created successfully
 
@@ -16,7 +16,7 @@
   @api
   Scenario: Update user details
     Given I have the saved user ID
-    And I have updated user details with name "Mobi updated" and email "mobi.updated@example.com"
+    And I have updated user details with name "Mobi updateedd" and email "mobiii.updated@example.com"
     When I send a PUT request to "/user/{id}"
     Then the response status should be 200
     And the response should contain the updated details

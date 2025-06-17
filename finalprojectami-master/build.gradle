@@ -43,9 +43,9 @@ dependencies {
 
 test {
     useJUnit()
-//    testLogging {
-//        events "passed", "skipped", "failed"
-//    }
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 
     // Mengambil argumen dari properti sistem dan menambahkannya ke dalam properti sistem untuk Selenium
 //    def chromeArgs = project.hasProperty('chromeoptions.args') ? project.chromeoptions.args : ''

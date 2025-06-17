@@ -43,7 +43,7 @@ public class CheckoutSteps {
         //setupDriver();
         driver = Hooks.getDriver();
         homePage = new HomePage(driver);
-        //checkoutPage = new CheckoutPage(driver);
+        checkoutPage = new CheckoutPage(driver);
         homePage.openHomePage();
         wait = new WebDriverWait(driver, Duration.ofSeconds(DEFAULT_TIMEOUT));
         waitForVisibility(By.xpath("//*[@id='navbarExample']/ul/li[1]/a"));

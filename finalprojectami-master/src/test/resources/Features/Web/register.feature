@@ -13,5 +13,5 @@ Feature: Register Account in Demoblaze
 
     Examples:
       | username | password    | expectedMessage              |
-      | ggmu4    | ggmu1       | Sign up successful.          |
+      | ggmu7    | ggmu1       | Sign up successful.          |
       | user123  | password123 | This user already exist.     |
