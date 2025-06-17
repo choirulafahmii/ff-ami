@@ -7,6 +7,7 @@ import org.openqa.selenium.Beta;
 import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -20,7 +21,17 @@ public class Hooks {
         if(driver == null) {
             // Initialize the WebDriver instance here
             // For example, using ChromeDriver:
-            driver = WebDriverManager.chromedriver().create();
+
+            ChromeOptions options = new ChromeOptions();
+
+            options.addArguments("--headless"); // For CI CD running
+
+            // Setup chromedriver via WebDriverManager
+            WebDriverManager.chromedriver().setup();
+
+            System.out.println("Initializing WebDriver...");
+            driver = new ChromeDriver(options);
+            System.out.println("WebDriver initialized successfully.");
             driver.manage().window().maximize();
             driver.get("https://www.demoblaze.com/");
 
