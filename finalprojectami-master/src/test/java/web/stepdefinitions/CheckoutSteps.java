@@ -61,7 +61,7 @@ public class CheckoutSteps {
     @When("user open checkout form")
     public void openCheckoutForm() {
         checkoutPage.clickPlaceOrder();
-        waitForVisibility(By.id("ordarModal"));
+        waitForVisibility(By.id("orderModal"));
     }
 
     @When("user fill checkout form with following data:")

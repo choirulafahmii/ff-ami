@@ -63,10 +63,10 @@ public class CheckoutPage {
         return popup.getText();
     }
 
-    public String closeSuccessPopUp() {
+    public void closeSuccessPopUp() {
         jsClick(waitUntilClickable(confirmButton));
-        return closeSuccessPopUp();
     }
+
 
     //-----------Helper Methods--------------
 
@@ -90,13 +90,15 @@ public class CheckoutPage {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
-    private WebElement waitUntilClickable(By placeOrderButton) {
-        return wait.until(ExpectedConditions.elementToBeClickable((By) fieldLocators));
+    private WebElement waitUntilClickable(By locator) {
+        return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
+
     private void jsClick(WebElement element) {
-        ((JavascriptExecutor) driver).executeScript("arguments[0].click()");
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
     }
+
 
 
 
