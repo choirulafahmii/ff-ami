@@ -22,4 +22,4 @@ Feature: Login ke Demoblaze
     When user click login button
     And user input username "boroboro" and password "finalprojectami7"
     And user hit login button
-    Then system show message "User don't Exist"
+    Then system show message "User does not exist."
