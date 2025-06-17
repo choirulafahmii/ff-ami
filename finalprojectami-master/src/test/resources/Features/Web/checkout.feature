@@ -12,7 +12,6 @@ Feature: Checkout in Demoblaze
       | <name> | <country> | <city>  | <card>     | <month> | <year> |
     And User hit Purchase button based on data validity
     Then will show message "<expected_message>" based on <isSuccess>
-
     Examples:
       | name  | country   | city    | card       | month | year  | isSuccess | expected_message                    |
       |       | Indonesia | Jakarta | 123456789  | 12    | 2025  | false     | Please fill out Name and Creditcard. |
@@ -36,6 +35,6 @@ Feature: Checkout in Demoblaze
     And User closed purchase confirmation pop up
 
     Examples:
-      | produk             | name  | country   | city    | card       | month | year  |
+      | product             | name  | country   | city    | card       | month | year  |
       | Samsung galaxy s6  | Indah | Indonesia | Jakarta | 123456789  | 12    | 2025  |
       | Sony xperia z5     | Raka  | Jepang    | Tokyo   | 987654321  | 11    | 2026  |
