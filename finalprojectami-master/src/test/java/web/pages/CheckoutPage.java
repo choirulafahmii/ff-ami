@@ -16,12 +16,12 @@ public class CheckoutPage {
 
     //field locators
     private final Map<String, By> fieldLocators = new HashMap<>() {{
-        fieldLocators.put("name", By.id("name"));
-        fieldLocators.put("country", By.id("country"));
-        fieldLocators.put("city", By.id("city"));
-        fieldLocators.put("card", By.id("card"));
-        fieldLocators.put("month", By.id("month"));
-        fieldLocators.put("year", By.id("year"));
+        put("name", By.id("name"));
+        put("country", By.id("country"));
+        put("city", By.id("city"));
+        put("card", By.id("card"));
+        put("month", By.id("month"));
+        put("year", By.id("year"));
     }};
 
     //button locators

@@ -14,12 +14,12 @@ Feature: Login ke Demoblaze
     When user click login button
     And user input username "finalprojectami" and password "finalprojectami7"
     And user hit login button
-    Then system show message "<expectedMessage>"
+    Then system show message "Wrong password."
 
   @negative
   Scenario: Failed to login with unregister username
     Given user open homepage Demoblaze
     When user click login button
-    And user input username "boroboro" and password "finalprojectami7"
+    And user input username "boroboroo" and password "finalprojectami7"
     And user hit login button
-    Then system show message "User don't Exist"
+    Then system show message "User does not exist."
