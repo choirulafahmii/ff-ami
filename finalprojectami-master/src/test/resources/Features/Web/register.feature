@@ -12,6 +12,6 @@ Feature: Register Account in Demoblaze
     Then system show message "<expectedMessage>"
 
     Examples:
-      | type     | password    | expectedMessage              |
-      | new   | ggmu1      | Sign up successful.          |
-      | exists  | password123 | This user already exist.     |
+      | type      | password    | expectedMessage              |
+      | new       | ggmu1       | Sign up successful.          |
+      | exists    | ggmu1       | This user already exist.     |
