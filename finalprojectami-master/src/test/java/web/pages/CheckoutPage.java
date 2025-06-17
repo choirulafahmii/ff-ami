@@ -1,6 +1,5 @@
 package web.pages;
 
-import io.cucumber.java.zh_tw.假設;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;

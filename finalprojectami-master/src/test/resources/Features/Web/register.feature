@@ -6,12 +6,12 @@ Feature: Register Account in Demoblaze
   Scenario Outline: Register account on Demoblaze
     Given user open homepage Demoblaze
     When user click Sign up menu
-    And user input username "<username>"
+    And user input username "<type>"
     And user input password "<password>"
     And user click Sign up button
     Then system show message "<expectedMessage>"
 
     Examples:
-      | username | password    | expectedMessage              |
-      | ggmu7    | ggmu1       | Sign up successful.          |
-      | user123  | password123 | This user already exist.     |
+      | type     | password    | expectedMessage              |
+      | new   | ggmu1      | Sign up successful.          |
+      | exists  | password123 | This user already exist.     |

@@ -17,7 +17,7 @@ public class DeleteUserTest {
         //set base URI RestAssured
         RestAssured.baseURI = "https://dummyapi.io/data/v1";
 
-        // 🔍 **Langkah 1: Periksa apakah user masih ada sebelum menghapusnya**
+        // Langkah 1: Periksa apakah user masih ada sebelum menghapusnya
         Response checkUser = given()
                 .header("app-id", "63a804408eb0cb069b57e43a") //App ID valid
                 .when()
@@ -34,7 +34,7 @@ public class DeleteUserTest {
 
         }
 
-        // 🗑️ **Langkah 2: Kirim request DELETE jika user masih ada**
+        // Langkah 2: Kirim request DELETE jika user masih ada
         Response deleteResponse = given()
                 .header("app-id", "63a804408eb0cb069b57e43a")
                 .when()

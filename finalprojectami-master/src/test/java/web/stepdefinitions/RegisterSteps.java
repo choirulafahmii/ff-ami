@@ -7,6 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import web.pages.RegisterPage;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class RegisterSteps {
@@ -32,11 +33,13 @@ public class RegisterSteps {
     }
 
     @And("user input username {string}")
-    public void userInputUsername(String username) {
+    public void userInputUsername(String type) {
         // Jika username yang diberikan adalah "random", gunakan username unik yang sudah dibuat
-        if (username.equalsIgnoreCase("random")){
+        String username = "ggmu5";
+        if (Objects.equals(type, "new")) {
             username = uniqueUserName;
         }
+
         RegisterPage.enterUsername(username);
     }
 
