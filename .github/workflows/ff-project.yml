@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run: 
-        working-directory: FinalProjectt
+        working-directory: finalprojectami-master
 
     steps:
     # download repo
