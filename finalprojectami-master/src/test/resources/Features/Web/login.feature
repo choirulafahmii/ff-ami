@@ -16,7 +16,7 @@ Feature: Login ke Demoblaze
     And user hit login button
     Then system show message "Wrong password."
 
-  @negative
+  # @negative
   # Scenario: Failed to login with unregister username
     #Given user open homepage Demoblaze
     #When user click login button
