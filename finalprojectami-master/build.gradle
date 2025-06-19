@@ -75,7 +75,7 @@ tasks.register('cucumber', JavaExec) {
     mainClass.set("io.cucumber.core.cli.Main")
     args = [
             '--plugin', 'pretty',
-            '--plugin', 'html:reports/index.html',
+            '--plugin', 'html:report/index.html',
             '--glue', 'api.apistepdefinitions',
             '--glue', 'web.stepdefinitions',
             '--tags', tags,
