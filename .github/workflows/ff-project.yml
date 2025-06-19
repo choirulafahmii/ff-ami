@@ -36,7 +36,7 @@ jobs:
 
     # Execute gradle command for running cucumber test
     - name: Execute test
-      run: gradlew.bat test
+      run: ./gradlew.bat test
 
     - name: Archive test results
       uses: actions/upload-artifact@v4
