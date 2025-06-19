@@ -44,4 +44,4 @@ jobs:
       if: always()
       with:
         name: cucumber-reports
-        path: reports
+        path: finalprojectami-master/reports
