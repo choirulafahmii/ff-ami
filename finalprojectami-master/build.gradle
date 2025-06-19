@@ -59,6 +59,31 @@ tasks.register('webTest', Test) {
     useJUnit()
 }
 
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+def tags = (findProperty('tags') ?: 'not @exclude')
+
+tasks.register('cucumber', JavaExec) {
+    description = "Run Cucumber tests"
+    group = "verification"
+
+    classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+    mainClass.set("io.cucumber.core.cli.Main")
+    args = [
+            '--plugin', 'pretty',
+            '--plugin', 'html:reports/index.html',
+            '--glue', 'api.apistepdefinitions',
+            '--glue', 'web.stepdefinitions',
+            '--tags', tags,
+            'src/test/resources'
+    ]
+    dependsOn testClasses
+}
+
 // ✅ Hanya gunakan satu task untuk API Test (Tag: @api)
 //tasks.register('apiTest', Test) {
 //    useJUnitPlatform()
