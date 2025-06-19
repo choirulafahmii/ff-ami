@@ -31,6 +31,7 @@ jobs:
 
     # set up gradlew
     - name:  Setup gradlew
+      working-directory: finalprojectami-master
       run: chmod +x gradlew
 
     # Execute gradle command for running cucumber test
