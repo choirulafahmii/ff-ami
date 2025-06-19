@@ -36,3 +36,11 @@ jobs:
     # Execute gradle command for running cucumber test
     - name: Execute test
       run: ./gradlew test
+
+      # Deploy to Github Pages
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v4.0.0
+      with:
+         PERSONAL_TOKEN: ${{ AMI }}
+         PUBLISH_DIR: reports
